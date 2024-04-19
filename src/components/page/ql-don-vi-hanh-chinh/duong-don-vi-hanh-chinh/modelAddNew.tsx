@@ -77,6 +77,7 @@ export default function AddNewItemModal({ isOpen, onClose }: AddNewItemModalProp
                         <ReactSelect
                             options={listHanhChinh}
                             onChange={handleDVHanhChinhChange}
+                            placeholder="Chọn đơn vị hành chính..."
                         />
                         <div style={{ marginBottom: '13px' }}></div>
                         <Input

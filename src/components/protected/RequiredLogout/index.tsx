@@ -18,11 +18,15 @@ function RequiredLogout({ children }: props) {
   const { isLogin } = useSelector((state: RootState) => state.auth);
   const { loading } = useSelector((state: RootState) => state.site);
 
-  useEffect(() => {
-    if (isLogin && !loading) replace(PATH.Home);
-  }, [isLogin, loading, replace]);
+  // useEffect(() => {
+  //   if (isLogin && !loading) replace(PATH.Home);
+  // }, [isLogin, loading, replace]);
 
-  if (!isLogin && !loading) {
+  // if (!isLogin && !loading) {
+  //   return <>{children}</>;
+  // }
+
+  if (!loading) {
     return <>{children}</>;
   }
 

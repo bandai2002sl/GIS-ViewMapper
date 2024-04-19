@@ -6,7 +6,8 @@ const kenhMuongServices = {
             "ten": string,
             "chieuDai": number,
             "chieuDaiKienCo": number,
-            "administrativeUnitId": number
+            "administrativeUnitId": number,
+            "icon": string,
           }) {
         return axiosClient.get(
             `${process.env.NEXT_PUBLIC_API_ALL}/kenh-muong`,

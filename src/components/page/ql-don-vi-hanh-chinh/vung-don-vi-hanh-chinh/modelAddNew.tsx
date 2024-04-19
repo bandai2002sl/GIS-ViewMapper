@@ -9,6 +9,7 @@ import vungDonViHanhChinhSevices from "~/services/vungDonViHanhChinhServices";
 import { toastSuccess, toastError } from "~/common/func/toast";
 import ReactSelect from "react-select";
 
+
 interface AddNewItemModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -21,14 +22,17 @@ export default function AddNewItemModal({ isOpen, onClose }: AddNewItemModalProp
         moTa: '',
         vung: ''
     })
+    
     useEffect(() => {
         async function fetchData() {
             try {
+                
                 const response = await donViHanhChinhSevices.displayDonViHanhChinh(listHanhChinh);
                 const options = response.data.map((item: any) => ({
                     label: item.ten, // Tên đơn vị
                     value: item.id,  // ID của đơn vị
                 }));
+                
                 setListHanhChinh(options);
             } catch (error) {
                 console.error(error);
@@ -80,6 +84,7 @@ export default function AddNewItemModal({ isOpen, onClose }: AddNewItemModalProp
                         <ReactSelect
                             options={listHanhChinh}
                             onChange={handleDVHanhChinhChange}
+                            placeholder="Chọn đơn vị hành chính..."
                         />
                         <div style={{ marginBottom: '13px' }}></div>
                         <Input

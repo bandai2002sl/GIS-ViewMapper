@@ -73,7 +73,7 @@ export default function ModalEdit({
     return (
         <Modal isOpen={isOpen} toggle={onClose} className={styles["modal-container"]} size='lg'>
             <Form form={form} setForm={setForm} onSubmit={handleSubmit}>
-                <ModalHeader toggle={onClose}>SỬA THÔNG TIN</ModalHeader>
+                <ModalHeader toggle={onClose}>CẬP NHẬT</ModalHeader>
                 <ModalBody>
                     <div className={styles["modal-body"]}>
                         <Input

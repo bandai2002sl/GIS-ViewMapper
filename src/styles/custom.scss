@@ -1,0 +1,9 @@
+.main-page{
+  padding: 12px !important;
+  padding-bottom: 0px !important;
+  overflow: auto !important;
+
+  & .box-action{
+    margin-bottom: 12px
+  }
+}

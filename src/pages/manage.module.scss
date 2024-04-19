@@ -3,11 +3,13 @@
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
-
+    table{
+        border : 1px solid grey;
+    }
     td,
     th {
-        border: 1px solid #ddd;
-        padding: 8px;
+        // border: 1px solid #ddd;
+        padding: 8px 12px;
         overflow: auto;
     }
 
@@ -25,10 +27,76 @@
         text-align: left;
         background-color: #3493e1;
         color: white;
+        font-weight: 500;
     }
 
     td:last-child,
     th:last-child {
-        width: 9%;
+        width: 10%;
+        text-align: center;
     }
+    
+}
+.hidden-column {
+    visibility: hidden;
+    /* Hoặc sử dụng opacity nếu bạn muốn nó ẩn mà không chiếm diện tích */
+    /* opacity: 0; */
+  }
+
+
+.title__report {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.box__btn {
+    display:  flex;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.error,
+.success,
+.pending {
+    color: white;
+    border: none;
+   
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.pending { 
+    background-color: #FFC107 ;
+}
+
+.error {
+    background-color: #dc3545;
+}
+
+.success {  
+    background-color: #28A745;
+}
+
+.col__action {
+    min-width: 250px;
+    
+    
+    
+    
+}
+
+
+
+.box__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }

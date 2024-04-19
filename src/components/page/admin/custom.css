@@ -1,0 +1,97 @@
+/* Trong một tệp CSS hoặc inline stylesheet */
+/* Tùy chỉnh modal */
+.modal-content {
+  background-color: #f0f0f0;
+  /* Màu nền của modal */
+  border-radius: 10px;
+  /* Bo góc modal */
+}
+
+/* Tùy chỉnh tiêu đề modal */
+.modal-title {
+  font-size: 24px;
+  /* Kích thước font cho tiêu đề */
+  color: #333;
+  /* Màu chữ cho tiêu đề */
+}
+
+/* Tùy chỉnh các trường đầu vào và label */
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  /* Độ rộng 100% cho các trường đầu vào và dropdown */
+  padding: 10px;
+  /* Khoảng cách giữa nội dung và biên */
+  margin-bottom: 10px;
+  /* Khoảng cách giữa các trường */
+  border: 1px solid #ccc;
+  /* Đường viền cho các trường */
+  border-radius: 5px;
+  /* Bo góc cho các trường */
+}
+
+label {
+  font-weight: bold;
+  /* In đậm cho label */
+  margin-right: 10px;
+  /* Khoảng cách giữa label và trường đầu vào */
+}
+
+/* Tùy chỉnh nút Create */
+button[type="submit"] {
+  background-color: #007bff;
+  /* Màu nền nút */
+  color: #fff;
+  /* Màu chữ cho nút */
+  border: none;
+  /* Loại bỏ đường viền */
+  border-radius: 5px;
+  /* Bo góc cho nút */
+  padding: 10px 20px;
+  /* Kích thước nút */
+  cursor: pointer;
+  /* Biến con trỏ thành bàn tay khi di chuột qua nút */
+}
+
+/* Tùy chỉnh nút Close */
+.close {
+  font-size: 24px;
+  /* Kích thước font cho nút Close */
+  color: #333;
+  /* Màu chữ cho nút Close */
+}
+
+/* Tùy chỉnh màu nền overlay khi modal mở */
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Màu nền overlay và độ trong suốt */
+}
+
+/* Tùy chỉnh kích thước modal */
+.modal-dialog {
+  max-width: 500px;
+  /* Kích thước tối đa của modal */
+}
+
+/* Tùy chỉnh màu chữ và biểu tượng dropdown */
+select {
+  color: #333;
+  /* Màu chữ cho dropdown */
+}
+
+/* Tùy chỉnh khoảng cách giữa các phần tử trong form */
+form>div {
+  margin-bottom: 15px;
+  /* Khoảng cách giữa các phần tử */
+}
+
+/* Tùy chỉnh màu chữ tiêu đề modal */
+.modal-title {
+  color: #333;
+}
+
+/* Tùy chỉnh màu nền modal header */
+.modal-header {
+  background-color: #f8f9fa;
+}

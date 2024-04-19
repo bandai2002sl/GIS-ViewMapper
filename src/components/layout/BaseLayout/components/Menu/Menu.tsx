@@ -5,7 +5,7 @@ import {
   AiTwotoneFolderOpen,
 } from "react-icons/ai";
 import { Fragment, useState } from "react";
-import { Imenu, menu } from "~/constants/config";
+import { Menu, menu } from "~/constants/config";
 
 import Link from "next/link";
 import { PropsMenu } from "./interfaces";
@@ -25,7 +25,7 @@ function Menu({}: PropsMenu) {
   );
 }
 
-function Item({ data }: { data: Imenu }) {
+function Item({ data }: { data: Menu }) {
   const [showGroup, setShowGroup] = useState(false);
   const { pathname } = useRouter();
   return (

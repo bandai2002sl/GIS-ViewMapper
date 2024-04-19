@@ -3,6 +3,7 @@ import axiosClient from ".";
 const congServices = {
     displayCong(data:
         {
+            "icon":string,
             "ten": string,
             "diaChi": string,
             "kichCo": string,

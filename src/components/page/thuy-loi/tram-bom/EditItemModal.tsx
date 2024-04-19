@@ -1,5 +1,14 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useEffect } from "react";
-import { Button, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
+import {
+  Button,
+  Input,
+  Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+} from "reactstrap";
 import styles from "~/pages/modal-custom.module.scss";
 
 interface EditItemModalProps {
@@ -28,7 +37,7 @@ function EditItemModal({ isOpen, onClose, item, onEdit }: EditItemModalProps) {
     // Validate editedData here if needed
     onEdit(editedData);
     onClose();
-  }
+  };
 
   return (
     <Modal
@@ -38,7 +47,7 @@ function EditItemModal({ isOpen, onClose, item, onEdit }: EditItemModalProps) {
       backdrop={false}
       size="lg"
     >
-      <ModalHeader toggle={onClose}>SỬA THÔNG TIN</ModalHeader>
+      <ModalHeader toggle={onClose}>CẬP NHẬT</ModalHeader>
       <ModalBody>
         <div className={styles["modal-body"]}>
           <div className="input-container">

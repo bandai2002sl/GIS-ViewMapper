@@ -1,17 +1,20 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
+
 export interface AuthState {
   token: string | null;
   tokenWs: string | null;
   isLogin: boolean;
-  permissionList: any[];
+  role: string | null;
+  permissionList: {} | null;
 }
 
 const initialState: AuthState = {
   token: null,
   tokenWs: null,
   isLogin: false,
-  permissionList: [],
+  role: null,
+  permissionList: null,
 };
 
 export const authSlice = createSlice({
@@ -29,12 +32,15 @@ export const authSlice = createSlice({
     setStateLogin: (state, action: { payload: boolean }) => {
       state.isLogin = action?.payload;
     },
-    setPermissionList: (state, action: { payload: any[] }) => {
+    setPermissionList: (state, action: { payload: string }) => {
       state.permissionList = action?.payload;
+    },
+    setRole: (state, action: { payload: string }) => {
+      state.role = action?.payload;
     },
   },
 });
 
-export const { setToken, setStateLogin, logout, setPermissionList } =
+export const { setToken, setStateLogin, logout, setPermissionList, setRole } =
   authSlice.actions;
 export default authSlice.reducer;

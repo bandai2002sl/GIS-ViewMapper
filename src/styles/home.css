@@ -1,0 +1,22 @@
+/* styles.css hoặc tương tự */
+.menu-item {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.menu-item:hover {
+  background-color: #eee;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Tăng kích thước khi hover */
+}
+
+.menu-item span {
+  margin-left: 5px;
+}
+
+/* Các style cho các biểu tượng */
+.menu-icon {
+  margin-right: 5px;
+}

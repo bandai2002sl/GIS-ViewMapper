@@ -6,7 +6,7 @@ import {
 
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { store } from "~/redux/store";
+import { store  } from "~/redux/store";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,14 +25,15 @@ function AppProvider({
 }) {
   return (
     <Provider store={store}>
-      <div>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <ToastContainer autoClose={3000} />
-            {children}
-          </Hydrate>
-        </QueryClientProvider>
-      </div>
+        <div>
+          <QueryClientProvider client={queryClient}>
+            <Hydrate state={pageProps.dehydratedState}>
+              <ToastContainer autoClose={3000} />
+              {children}
+            </Hydrate>
+          </QueryClientProvider>
+        </div>
+
     </Provider>
   );
 }

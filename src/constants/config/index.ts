@@ -1,6 +1,9 @@
-import { AiFillHome } from "react-icons/ai";
+import {  MdHome, MdBusiness, MdTimeline, MdEvent, MdDirectionsBoat, MdBuild, MdSettings, MdLocalFlorist, MdLocalGasStation,MdBeachAccess, MdMap,MdWaves } from "react-icons/md";
+import { FaUser ,FaBuilding, FaMap, FaFish, FaShip, FaIndustry, FaWater, FaArrowsAltV, FaSwimmingPool, FaGripLines,FaSquare,FaCircle } from "react-icons/fa";
+import { GiNotebook } from "react-icons/gi";
+import { CiViewList } from "react-icons/ci";
 export const MAXIMUM_FILE = 10; //MB
-
+import React from 'react';
 
 export const allowFiles = [
   "application/pdf",
@@ -20,174 +23,65 @@ export enum PATH {
   Administrativeunitroad = "/don-vi-hanh-chinh/duong-don-vi-hanh-chinh",
   Reportingperiod = "/don-vi-hanh-chinh/ky-bao-cao",
 
-  Farming = "/trong-trot",
   Seafood = "/thuy-san",
-  Cooperative = "/trong-trot/hop-tac-xa",
-  BusinessCategory = "/trong-trot/loai-kinh-doanh",
-  BusinessEstablishment = "/trong-trot/co-so-kinh-doanh",
-  DiseaseType = "/trong-trot/loai-benh",
-  Crops = "/trong-trot/cay-trong",
-  CultivationProduction = "/trong-trot/san-xuat-trong-trot",
-  Hightechmodel = "/trong-trot/mo-hinh-cong-nghe-cao",
-  Link = "/trong-trot/lien-ket",
-  Plantdisease = "/trong-trot/benh-cay",
-  Formoflandconversion = "/trong-trot/hinh-thuc-chuyen-doi-dat",
-  Landuseconversion = "/trong-trot/chuyen-doi-su-dung-dat",
-  Drought = "/trong-trot/han-han",
-  Processingfacilities = "/trong-trot/co-so-che-bien",
+  SeaFish = "/thuy-san/thuy-san",
 
-  Breed = "/chan-nuoi",
-  Pet = "/chan-nuoi/vat-nuoi",
-  Productionoflivestock = "/chan-nuoi/san-xuat-vat-nuoi",
-  Formofanimalhusbandry = "/chan-nuoi/hinh-thuc-chan-nuoi",
-  Livestockfacility = "/chan-nuoi/co-so-chan-nuoi",
-  Safelivestockarea = "/chan-nuoi/vung-chan-nuoi-an-toan",
-  Petdiseases = "/chan-nuoi/benh-vat-nuoi",
 
   //
   FishingVesselManagement = "/thuy-san/quan-ly-tau-ca",
   AquaticProductProduction = "/thuy-san/san-xuat-thuy-san",
   SeafoodBusinessEstablishments = "/thuy-san/co-so-kinh-doanh",
 
-  Mechanization = "/pt-nong-thon/co-gioi-hoa",
-  CraftVillageList = "/pt-nong-thon/danh-muc-lang-nghe",
-  OcopProducts = "/pt-nong-thon/san-pham-ocop",
-
   PumpStation = "/pt-thuy-loi/tram-bom",
   Canal = "/pt-thuy-loi/kenh-muong",
   Reservoir = "/pt-thuy-loi/ho-chua",
   Drain = "/pt-thuy-loi/cong",
   IrrigatedArea = "/pt-thuy-loi/dien-tich-tuoi-tieu",
+  
+  
+  ReportCreate = "/bao-cao/tao-bao-cao",
+  ReportList = "/bao-cao/danh-sach",
+  SynthesisReport = "/bao-cao/tong-hop",
 
-  ForestryData = "/lam-nghiep/du-lieu-lam-nghiep",
-  GeneralInformation = "/lam-nghiep/thong-tin-chung",
-  SlaughterHouse = "/ql-chat-luong/co-so-giet-mo",
-  ProcessingFacilities = "/ql-chat-luong/co-so-che-bien",
+  User = "/admin/user"
+
 }
 
-export interface Imenu {
+export interface Menu {
   title: string;
-  group?: Imenu[];
+  group?: Menu[];
   path?: string;
   Icon?: any;
   selected?: boolean;
 }
 
 
-export const menu: Imenu[] = [
+export const menu: Menu[] = [
   {
     title: "Trang chủ",
-    path: "/",
-    Icon: AiFillHome,
+    path: PATH.Home,
+    Icon: MdHome,
   },
-
   {
     title: "Đơn vị hành chính",
     group: [
       {
         title: "Đơn vị hành chính",
         path: PATH.Administrativeunits,
+        Icon: FaBuilding,
       },
       {
         title: "Vùng đơn vị hành chính",
         path: PATH.Administrativeunitregion,
+        Icon: FaMap,
       },
+      /*
       {
         title: "Đường đơn vị hành chính",
         path: PATH.Administrativeunitroad,
-      },
-      {
-        title: "Kỳ báo cáo",
-        path: PATH.Reportingperiod,
-      },
-    ]
-  },
-
-  {
-    title: "Quản lý trồng trọt",
-    group: [
-      {
-        title: "Hợp tác xã",
-        path: PATH.Cooperative,
-      },
-      {
-        title: "Loại kinh doanh",
-        path: PATH.BusinessCategory,
-      },
-      {
-        title: "Cơ sở kinh doanh",
-        path: PATH.BusinessEstablishment,
-      },
-      {
-        title: "Loại bệnh",
-        path: PATH.DiseaseType,
-      },
-      {
-        title: "Cây trồng",
-        path: PATH.Crops,
-      },
-      {
-        title: "Sản xuất trồng trọt",
-        path: PATH.CultivationProduction,
-      },
-      {
-        title: "Mô hình công nghệ cao",
-        path: PATH.Hightechmodel,
-      },
-      {
-        title: "Liên kết",
-        path: PATH.Link,
-      },
-      {
-        title: "Bệnh cây",
-        path: PATH.Plantdisease,
-      },
-      {
-        title: "Hình thức chuyển đổi đất",
-        path: PATH.Formoflandconversion,
-      },
-      {
-        title: "Chuyển đổi đất sử dụng",
-        path: PATH.Landuseconversion,
-      },
-      {
-        title: "Hạn hán",
-        path: PATH.Drought,
-      },
-      {
-        title: "Cơ sở chế biến",
-        path: PATH.Processingfacilities,
-      },
+        Icon: MdTimeline,
+      },*/
     ],
-  },
-  {
-    title: "Chăn nuôi",
-    group: [
-      {
-        title: "Vật nuôi",
-        path: PATH.Pet,
-      },
-      {
-        title: "Sản xuất vật nuôi",
-        path: PATH.Productionoflivestock,
-      },
-      {
-        title: "Hình thức chăn nuôi",
-        path: PATH.Formofanimalhusbandry,
-      },
-      {
-        title: "Cơ sở chăn nuôi",
-        path: PATH.Livestockfacility,
-      },
-      {
-        title: "Vùng chăn nuôi an toàn",
-        path: PATH.Safelivestockarea,
-      },
-      {
-        title: "Bệnh vật nuôi",
-        path: PATH.Petdiseases,
-      },
-    ]
   },
   {
     title: "Quản lý thuỷ sản",
@@ -195,29 +89,24 @@ export const menu: Imenu[] = [
       {
         title: "Cơ sở kinh doanh",
         path: PATH.SeafoodBusinessEstablishments,
+        Icon: MdBusiness,
       },
       {
         title: "Quản lý tàu cá",
         path: PATH.FishingVesselManagement,
+        Icon: FaShip,
       },
       {
         title: "Sản xuất thuỷ sản",
         path: PATH.AquaticProductProduction,
-      },
-    ]
-  },
-  {
-    title: "Quản lý phát triển lâm nghiệp",
-    group: [
-      {
-        title: "Thông tin chung",
-        path: PATH.GeneralInformation,
+        Icon: FaFish,
       },
       {
-        title: "Dữ liệu lâm nghiệp",
-        path: PATH.ForestryData,
+        title: "Quản lý thuỷ sản",
+        path: PATH.SeaFish,
+        Icon: FaFish,
       },
-    ]
+    ],
   },
   {
     title: "Quản lý chất lượng thuỷ lợi",
@@ -225,59 +114,69 @@ export const menu: Imenu[] = [
       {
         title: "Cống",
         path: PATH.Drain,
+        Icon: FaCircle,
       },
       {
         title: "Hồ chứa",
         path: PATH.Reservoir,
+        Icon: FaWater,
       },
       {
         title: "Kênh mương",
         path: PATH.Canal,
+        Icon:MdTimeline,
       },
       {
         title: "Trạm bơm",
         path: PATH.PumpStation,
+        Icon: MdSettings,
       },
       {
         title: "Diện tích tưới tiêu",
         path: PATH.IrrigatedArea,
+        Icon: MdLocalFlorist,
       },
     ]
   },
   {
-    title: "Quản lý phát triển nông thôn",
+    title: "Quản lý báo cáo",
     group: [
       {
-        title: "Cơ giới hoá",
-        path: PATH.Mechanization,
+        title: "Kỳ báo cáo",
+        path: PATH.Reportingperiod,
+        Icon: MdEvent,
       },
       {
-        title: "Danh mục làng nghề",
-        path: PATH.CraftVillageList,
+        title: "Nhập liệu báo cáo",
+        path: PATH.ReportCreate,
+        Icon: GiNotebook ,
       },
       {
-        title: "Sản phẩm OCOP",
-        path: PATH.OcopProducts,
+        title: "Danh sách báo cáo",
+        path: PATH.ReportList,
+        Icon: CiViewList,
       },
+      {
+        title: "Tổng hợp báo cáo",
+        path: PATH.SynthesisReport,
+        Icon:MdTimeline,
+      },
+      
     ]
   },
   {
-    title: "Quản lý chất lượng",
+    title: "Quản lý người dùng",
     group: [
       {
-        title: "Cơ sở chế biến",
-        path: PATH.ProcessingFacilities,
+        title: "Danh sách người dùng",
+        path: PATH.User,
+        Icon: FaUser ,
       },
-      {
-        title: "Cơ sở giết mổ",
-        path: PATH.SlaughterHouse,
-      },
-      {
-        title: "Cơ sở kinh doanh",
-        path: PATH.BusinessEstablishment,
-      },
+     
+      
     ]
   },
+  
 ];
 
 export const Languagese = [

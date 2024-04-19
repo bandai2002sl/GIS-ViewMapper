@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import Form, { FormContext, Input } from "~/components/common/Form";
 import { Fragment, useState } from "react";
 import {
   setPermissionList,
+  setRole,
   setStateLogin,
   setToken,
 } from "~/redux/reducer/auth";
@@ -17,12 +19,28 @@ import { httpRequest } from "~/services";
 import { setInfoUser } from "~/redux/reducer/user";
 import { store } from "~/redux/store";
 import styles from "./Login.module.scss";
+import { useRouter } from "next/router";
+
+const CasePermission = (permission: number) => {
+  switch (permission) {
+    case 0:
+      return "admin";
+    case 1:
+      return "xa";
+    case 2:
+      return "huyen";
+    case 3:
+      return "tinh";
+    default:
+      return "";
+  }
+};
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-
+  const { replace } = useRouter();
   const [form, setForm] = useState({
-    username: "",
+    email: "",
     password: "",
   });
 
@@ -31,12 +49,14 @@ const Login = () => {
       showMessageFailed: true,
       http: authSevices.login(form),
     });
-
+    console.log(res)
     if (res) {
-      store?.dispatch(setPermissionList(res?.permissionList || []));
+      store?.dispatch(setPermissionList(res?.permissionList));
+      store?.dispatch(setRole(CasePermission(res?.role)));
       store?.dispatch(setToken(res?.access_token));
       store?.dispatch(setStateLogin(true));
       store?.dispatch(setInfoUser(res));
+      replace("/");
     }
   };
 
@@ -50,7 +70,7 @@ const Login = () => {
             <Form form={form} setForm={setForm} onSubmit={handleSubmit}>
               <Input
                 bgGrey
-                name="username"
+                name="email"
                 placeholder="Tài khoản đăng nhập"
                 isRequired
               />
@@ -84,7 +104,13 @@ const Login = () => {
           // style={{
           //   backgroundImage: `url(${background || backgrounds.login.src})`,
           // }}
-        ></div>
+        >
+          <img 
+            src="/images/background.png" 
+            alt="Background" 
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
+          />
+        </div>
       </div>
     </RequiredLogout>
   );

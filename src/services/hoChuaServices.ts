@@ -9,7 +9,8 @@ const hoChuaServices = {
             "dienTichTuoiThietKe": number,
             "dienTichTuoiThucTe": number,
             "loaiHo": string,
-            "administrativeUnitId": number
+            "administrativeUnitId": number,
+            "icon": string,
           }) {
         return axiosClient.get(
             `${process.env.NEXT_PUBLIC_API_ALL}/ho-chua`,

@@ -3,6 +3,7 @@ import Menu from "./components/Menu/Menu";
 import { PropsBaseLayout } from "./interfaces";
 import RequireAuth from "~/components/protected/RequiredAuth";
 import styles from "./BaseLayout.module.scss";
+import { ToastContainer } from "react-toastify";
 
 function BaseLayout({ children }: PropsBaseLayout) {
   return (
@@ -15,6 +16,9 @@ function BaseLayout({ children }: PropsBaseLayout) {
           <Menu />
         </div>
         <div className={styles.main}>{children}</div>
+      <ToastContainer 
+  autoClose={2000}
+/>
       </div>
     </RequireAuth>
   );

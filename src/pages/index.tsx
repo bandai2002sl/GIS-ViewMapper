@@ -1,25 +1,29 @@
-import { Fragment, ReactElement, useState } from "react";
-
+/* eslint-disable @next/next/no-img-element */
+import React, { Fragment, ReactElement } from "react";
 import BaseLayout from "~/components/layout/BaseLayout";
-import Button from "~/components/common/Button";
-import Dialog from "~/components/common/Dialog";
 import Head from "next/head";
-import Pagination from "~/components/common/Pagination";
-import Table from "~/components/common/Table";
 import i18n from "~/locale/i18n";
-import { setStateLogin } from "~/redux/reducer/auth";
-import { store } from "~/redux/store";
 
-export default function Page() {
+const App = () => {
   return (
     <Fragment>
       <Head>
         <title>{i18n.t("Home.home")}</title>
       </Head>
+      <div>
+        <img
+          src="/images/trangchu.png" 
+          alt="Mô tả của Hình ảnh"
+          width="1300" 
+          height="760"
+        />
+      </div>
     </Fragment>
   );
-}
+};
 
-Page.getLayout = function (page: ReactElement) {
+App.getLayout = function (page: ReactElement) {
   return <BaseLayout>{page}</BaseLayout>;
 };
+
+export default App;

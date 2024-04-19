@@ -1,6 +1,7 @@
 import "react-toastify/dist/ReactToastify.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "~/styles/globals.scss";
+import "~/styles/custom.scss";
 import "moment/locale/vi";
 import "tippy.js/dist/tippy.css";
 

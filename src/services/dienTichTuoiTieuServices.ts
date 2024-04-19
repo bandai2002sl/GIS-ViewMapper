@@ -7,7 +7,8 @@ const dienTichTuoiTieuServices = {
             "ngayThongKe": string,
             "hinhThuc": string,
             "administrativeUnitId": number,
-            "cropTypeId": number
+            "cropTypeId": number,
+            "icon": string,
           }) {
         return axiosClient.get(
             `${process.env.NEXT_PUBLIC_API_ALL}/dien-tich-tuoi-tieu`,

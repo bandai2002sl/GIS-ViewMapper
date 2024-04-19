@@ -40,11 +40,21 @@ export default function ModalEdit({
             console.error(error);
         }
     };
+    const trangThai = [
+        {
+          value: "Công khai",
+          label: "Công khai",
+        },
+        {
+          value: "Riêng tư",
+          label: "Riêng tư",
+        },
+      ];
 
     return (
         <Modal isOpen={isOpen} toggle={onClose} className={styles["modal-container"]} backdrop={false} size='lg'>
             <Form form={form} setForm={setForm} onSubmit={handleSubmit}>
-                <ModalHeader toggle={onClose}>SỬA THÔNG TIN</ModalHeader>
+                <ModalHeader toggle={onClose}>CẬP NHẬT</ModalHeader>
                 <ModalBody>
                     <div className={styles["modal-body"]}>
                         <Input
@@ -67,12 +77,21 @@ export default function ModalEdit({
                             placeholder="Nhập thời điểm kết thúc"
                             isRequired
                         />
-                        <Input
-                            name="trangThai"
-                            label="Trạng thái"
-                            placeholder="Nhập trạng thái"
-                            isRequired
-                        />
+                        <div className={styles["form-group"]}>
+                        <label htmlFor="trangThai">Trạng thái :</label>
+                        <select 
+                            name="trangThai" 
+                            value={form.trangThai} 
+                            onChange={(e) => setForm({ ...form, trangThai: e.target.value })}
+                            required
+                             >
+                             {trangThai.map(option => (
+                        <option key={option.value} value={option.value}>
+                        {option.label}
+                         </option>
+                       ))}
+                      </select>
+                    </div>
                     </div>
                 </ModalBody>
                 <ModalFooter>

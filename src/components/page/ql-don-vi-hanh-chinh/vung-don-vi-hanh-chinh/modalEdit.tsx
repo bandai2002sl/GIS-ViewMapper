@@ -71,13 +71,14 @@ export default function ModalEdit({
     return (
         <Modal isOpen={isOpen} toggle={onClose} className={styles["modal-container"]} size='lg'>
             <Form form={form} setForm={setForm} onSubmit={handleSubmit}>
-                <ModalHeader toggle={onClose}>SỬA THÔNG TIN</ModalHeader>
+                <ModalHeader toggle={onClose}>CẬP NHẬT</ModalHeader>
                 <ModalBody>
                     <div className={styles["modal-body"]}>
                         <div style={{ marginBottom: '10px' }}>Đơn vị hành chính</div>
                         <ReactSelect
                             options={listHanhChinh}
                             onChange={handleDVHanhChinhChange}
+                            placeholder="Chọn đơn vị hành chính..."
                         />
                         <div style={{ marginBottom: '13px' }}>Đơn vị hành chính</div>
                         <Input

@@ -14,12 +14,17 @@ export default function RequireAuth(props: IRequireAuthProps) {
   const { loading } = useSelector((state: RootState) => state.site);
   const { isLogin } = useSelector((state: RootState) => state.auth);
 
-  useEffect(() => {
-    if (!isLogin && !loading) replace(PATH.Login);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLogin, loading]);
+  // useEffect(() => {
+  //   if (!isLogin && !loading) replace(PATH.Login);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isLogin, loading]);
 
-  if (isLogin && !loading) {
+  // if (isLogin && !loading) {
+  //   return <>{props.children}</>;
+  // }
+
+  
+  if (!loading) {
     return <>{props.children}</>;
   }
 

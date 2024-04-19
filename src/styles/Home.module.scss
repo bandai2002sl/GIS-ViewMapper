@@ -1,0 +1,20 @@
+// styles.module.scss
+
+.menu-item {
+    @include transition(background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+  
+    &:hover {
+      background-color: #e0e0e0; /* Màu nền khi di chuột qua */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Đổ bóng khi di chuột qua */
+    }
+  
+    & + .menu-item {
+      border-top: 1px solid #ccc; /* Đường viền phân tách giữa các mục */
+    }
+  }
+  .menu-group {
+    // Những kiểu dáng cho các nhóm trong menu
+  }
